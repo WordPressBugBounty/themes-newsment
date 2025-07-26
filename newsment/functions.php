@@ -12,17 +12,26 @@ function newsment_enqueue_child_styles()
 {
     $min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
     $parent_style = 'covernews-style';
-
+    $newsment_version = wp_get_theme()->get('Version');
     $fonts_url = 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700';
     wp_enqueue_style('newsment-google-fonts', $fonts_url, array(), null);
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap' . $min . '.css');
-    wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css');
+    // wp_enqueue_style($parent_style, get_template_directory_uri() . '/style.css');
+    wp_enqueue_style($parent_style, get_template_directory_uri() . '/style' . $min . '.css', array(), $newsment_version);
     wp_enqueue_style(
         'newsment',
         get_stylesheet_directory_uri() . '/style.css',
         array('bootstrap', $parent_style),
         wp_get_theme()->get('Version')
     );
+    if (is_rtl()) {
+        wp_enqueue_style(
+            'morenews-rtl',
+            get_template_directory_uri() . '/rtl.css',
+            array($parent_style),
+            $newsment_version
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'newsment_enqueue_child_styles');
 
