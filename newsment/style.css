@@ -5,12 +5,12 @@ Author: AF themes
 Author URI: https://afthemes.com
 Requires at least: 4.0
 Requires PHP: 5.0
-Tested up to: 6.9
+Tested up to: 7.1
 Description:  Newsment is a child theme of CoverNews. The theme has a new advertisement widget area, default header image as well as some significant fonts and color configuration adjustments. In addition, the design also modified some of the default nature of the front page layout. You can implement layouts such as a personal blog, modern news journals, fashion magazines, travel blogging & magazine, vibrant news sites, and more. It is also compatible with Elementor, Gutenberg, and RTL language support along with the WooCommerce plugin that helps you to integrate an online business with your blog easily with the help of the available customizer options and widgets. The theme is SEO friendly with optimized code and awesome support.
 See Demo: https://demos.afthemes.com/covernews/newsment/
 Support: https://afthemes.com/supports/
 Template: covernews
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: newsment
@@ -187,4 +187,21 @@ body #loader:after {
     font-size: 26px;
     line-height: 55px;
     }
+}
+
+.entry-content .wp-block-rss li a, 
+.entry-content .wp-block-categories a, 
+.entry-content .wp-block-archives a,
+.entry-content .wp-block-latest-comments li a, 
+.entry-content .wp-block-latest-posts li a, 
+.entry-content .wp-block-tag-cloud a,
+.entry-content .wp-block-page-list a,
+.entry-content .wp-block-navigation a,
+.entry-content .wp-block-query a,
+.entry-content .wp-block-post-title a,
+.entry-content .wp-block-post-excerpt__more-link,
+.entry-content .wp-block-post-comments-form a,
+.entry-content .wp-block-loginout a,
+.entry-content .wp-block-calendar tbody a {
+    color: inherit !important;
 }
